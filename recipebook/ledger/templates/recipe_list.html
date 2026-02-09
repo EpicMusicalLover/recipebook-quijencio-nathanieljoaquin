@@ -4,10 +4,11 @@
 {% block title %}Recipe Book{% endblock %}
 {% block content %}
 <h1> Recipe Book</h1>
-<ul>
-    {% for task in tasks %}
-    <li>{{task}}</li>
-    {% endfor %}
-</ul>
-<a href="{{ recipe.link }}">Link to Recipe</a>
+    <ul>
+        {% for recipe in recipes %}
+        <li>
+            <a href="..{{ recipe.link }}">{{recipe.name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
