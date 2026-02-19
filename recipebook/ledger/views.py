@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Recipe
 
 def recipe_list(request):
-    recipes = Recipe.object.all()
+    recipes = Recipe.objects.all()
     ctx = {"recipes":recipes}
     return render(request, 'recipe_list.html',ctx)
 
