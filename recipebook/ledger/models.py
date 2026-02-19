@@ -20,15 +20,15 @@ class RecipeIngredient(models.Model):
     ingredient = models.ForeignKey(
         Ingredient,
         on_delete=models.CASCADE,
-        related_name='recipe_ingredients'
+        related_name='recipe'
     )
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
-        related_name='recipe_ingredients'
+        related_name='ingredients'
     )
     def __str__(self):
-        return f"{self.quantity} of {self.ingredient.name} in {self.recipe.name}"
+        return f"{self.quantity} {self.ingredient.name}"
 
 class TaskGroup(models.Model):
     name = models.CharField(max_length=50)
