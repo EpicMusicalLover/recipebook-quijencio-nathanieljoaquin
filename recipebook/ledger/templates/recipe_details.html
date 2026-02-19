@@ -5,10 +5,10 @@
 <h2>{{ recipe.name }}</h2>
 
 <ul>
-    {% for item in recipe.ingredients %}
-        <li>{{ item.name }} - {{ item.quantity }}</li>
-    {% empty %}
-        <li>No ingredients found.</li>
+     {% for ingredient in recipe.ingredients.all %}
+        <li>
+            {{ ingredient.quantity }} - {{ ingredient.ingredient.name }}
+        </li>
     {% endfor %}
 </ul>
 
