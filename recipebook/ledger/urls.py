@@ -7,4 +7,5 @@ urlpatterns=[
     path('recipe/<int:pk>', RecipeDetailView.as_view(), name="task_detail"),
     # path('recipe/1', recipe_one,name="recipe-one"),
     # path('recipe/2', recipe_two,name="recipe-two"),
+    # fix the paths
 ]
