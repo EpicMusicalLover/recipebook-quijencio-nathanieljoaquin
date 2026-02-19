@@ -1,4 +1,10 @@
 from django.contrib import admin
-from .models import Recipe
+from .models import Recipe, RecipeIngredient
 
-admin.site.register(Recipe)
+class RecipeIngredientInline(admin.TabularInline):
+    model = RecipeIngredient
+
+class RecipeAdmin(admin.ModelAdmin):
+    inlines = [RecipeIngredientInline]
+
+admin.site.register(Recipe, RecipeAdmin)
