@@ -16,7 +16,7 @@ class RecipeListView(ListView):
 
 class RecipeDetailView(DetailView):
     model = Recipe
-    template_name = "recipe_list.html"
+    template_name = "recipe_details.html"
 
 # def recipe_list(request):
 #     ctx={
