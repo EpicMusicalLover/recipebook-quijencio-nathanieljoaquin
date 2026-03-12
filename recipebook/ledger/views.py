@@ -35,7 +35,7 @@ class RecipeImageCreateView(LoginRequiredMixin, CreateView):
         context['recipe'] = Recipe.objects.get(pk=recipe_pk)
         return context
     def get_success_url(self):
-        return reverse_lazy('url name', kwargs={ 'pk': self.object.pk })
+        return reverse_lazy('ledger:recipe_detail', kwargs={ 'pk': self.object.pk })
 
 
 # Create your views here.
