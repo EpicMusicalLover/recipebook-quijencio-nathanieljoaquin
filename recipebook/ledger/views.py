@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .models import Recipe, RecipeImage
 from .forms import RecipeForm, RecipeImageForm
@@ -18,7 +18,7 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
 
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     model = Recipe
-    template_name = "recipe_add.html"
+    template_name = "recipe_create.html"
     form_class = RecipeForm
 
 class RecipeImageCreateView(LoginRequiredMixin, CreateView):
