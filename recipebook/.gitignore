@@ -3,4 +3,4 @@ db.sqlite3
 *.pyc
 *.log
 *.env
-media/
+media/images/
