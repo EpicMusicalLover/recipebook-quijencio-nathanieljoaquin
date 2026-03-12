@@ -4,4 +4,3 @@ db.sqlite3
 *.log
 *.env
 media/images/
-media/.gitkeep
