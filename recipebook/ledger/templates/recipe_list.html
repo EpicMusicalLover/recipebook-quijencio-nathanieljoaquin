@@ -10,7 +10,7 @@
         </li>
         {% endfor %}
         {% if user.is_authenticated %}
-        <a href="{% url 'ledger:recipe_add' %}">Add New Recipe</a>
+        <a href="{% url 'ledger:recipe_add' %}">Add a new recipe</a>
         {% endif %}
     </ul>
 {% endblock %}
