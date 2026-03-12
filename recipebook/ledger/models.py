@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
@@ -36,6 +35,12 @@ class Recipe(models.Model):
     def get_absolute_url(self):
         return reverse("ledger:recipe_detail", args=[self.pk])
 
+class RecipeImage(models.Model):
+    image = models.ImageField(blank = False, null = False)
+    description = models.CharField(max_length= 255)
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='Images')
+    def __str__(self):
+        return self.description
 
 class RecipeIngredient(models.Model):
     quantity = models.CharField(max_length=100)
