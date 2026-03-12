@@ -36,7 +36,7 @@ class Recipe(models.Model):
         return reverse("ledger:recipe_detail", args=[self.pk])
 
 class RecipeImage(models.Model):
-    image = models.ImageField(blank = False, null = False)
+    image = models.ImageField(upload_to='images/', blank = False, null = False)
     description = models.CharField(max_length= 255)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='Images')
     def __str__(self):
